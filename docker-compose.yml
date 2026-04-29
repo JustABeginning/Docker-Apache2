@@ -1,0 +1,30 @@
+services:
+  docker-apache2:
+    container_name: docker-apache2
+    cap_add:
+      - NET_ADMIN
+    build:
+      context: .
+      args:
+        SSH_USER: "$SSH_USER"
+        SSH_PASSWORD: "$SSH_PASSWORD"
+        ROOT_PASSWORD: "$ROOT_PASSWORD"
+      dockerfile: Dockerfile
+    image: docker-apache2:latest
+    tty: true
+    ports:
+      - 2222:22
+      - 80:80
+    networks:
+      - docker-apache2-network
+    volumes:
+      - type: bind
+        source: ./storage
+        target: /app/storage
+
+networks:
+  docker-apache2-network:
+    driver: bridge
+
+volumes:
+  storage:

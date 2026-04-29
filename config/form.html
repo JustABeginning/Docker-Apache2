@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title></title>
+    <style>
+      table {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      table,
+      td {
+        font-size: 1.2em;
+      }
+
+      th,
+      td {
+        padding: 1em;
+      }
+
+      th {
+        font-size: 1.3em;
+        background-color: #ffe4c4;
+      }
+
+      td.textCenter {
+        text-align: center;
+      }
+
+      td.formEnd {
+        text-align: center;
+        background-color: #a3c1ad;
+        font-size: 1.3em;
+      }
+
+      input {
+        font-size: large;
+        height: auto;
+      }
+
+      input.submit {
+        margin-right: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/upload.php" enctype="multipart/form-data" method="post">
+      <!-- // -->
+      <table align="center">
+        <!-- // -->
+        <thead>
+          <tr>
+            <th colspan="2">File Upload</th>
+          </tr>
+        </thead>
+        <!-- // -->
+
+        <!-- // -->
+        <tbody>
+          <!-- // -->
+          <tr>
+            <td class="textCenter">
+              <input type="file" name="file" />
+            </td>
+            <td class="textCenter">
+              <input type="submit" name="submit" value="OK" />
+            </td>
+          </tr>
+          <!-- // -->
+        </tbody>
+        <!-- // -->
+
+        <!-- // -->
+        <tfoot>
+          <!-- // -->
+          <tr>
+            <td class="formEnd" colspan="2"><a href="/files">GET</a></td>
+          </tr>
+          <!-- // -->
+        </tfoot>
+        <!-- // -->
+      </table>
+      <!-- // -->
+    </form>
+  </body>
+</html>
